@@ -1,0 +1,8 @@
+.git
+.github
+.syncmesh
+node_modules
+dist
+coverage
+test
+*.log

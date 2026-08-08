@@ -1,0 +1,17 @@
+services:
+  replica-a:
+    build: .
+    environment:
+      SYNCMESH_ACTOR: replica-a
+      SYNCMESH_DATA: /var/lib/syncmesh
+    ports:
+      - "8080:8080"
+    volumes:
+      - replica-a:/var/lib/syncmesh
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+
+volumes:
+  replica-a:
